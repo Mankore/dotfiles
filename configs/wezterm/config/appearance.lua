@@ -11,6 +11,7 @@ function module.apply_to_config(config)
 	-- tab bar
 	config.hide_tab_bar_if_only_one_tab = true
 	config.switch_to_last_active_tab_when_closing_tab = true
+	config.tab_bar_at_bottom = true
 
 	-- Set window appearance
 	config.window_background_opacity = 0.90 -- Slight transparency
