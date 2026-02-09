@@ -152,7 +152,7 @@ return {
       desc = "Autocmds",
     },
     {
-      "<leader>sC",
+      "<leader>sO",
       function()
         Snacks.picker.commands()
       end,
@@ -313,13 +313,6 @@ return {
         Snacks.picker.lsp_workspace_symbols()
       end,
       desc = "LSP Workspace Symbols",
-    },
-    {
-      "<leader>lr",
-      function()
-        Snacks.rename.rename_file()
-      end,
-      desc = "Rename File",
     },
     {
       "<leader>bd",
