@@ -16,7 +16,7 @@ return {
   require('custom.plugins.mini'),
   require('custom.plugins.cmp'),
   require('custom.plugins.snacks'),
-  require('custom.plugins.avante'),
+  -- require('custom.plugins.avante'),
   require('custom.plugins.auto-session'),
   require('custom.plugins.dropbar'),
   -- require('custom.plugins.lspsaga'),
