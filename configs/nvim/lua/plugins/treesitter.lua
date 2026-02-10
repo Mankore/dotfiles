@@ -18,6 +18,7 @@ return {
       "markdown",
       "markdown_inline",
       "vim",
+      "regex",
     }
     require("nvim-treesitter").install(parsers)
 
@@ -43,7 +44,7 @@ return {
     vim.api.nvim_create_autocmd("FileType", {
       pattern = filetypes,
       callback = function()
-        print("Starting treesitter for " .. vim.bo.filetype)
+        -- print("Starting treesitter for " .. vim.bo.filetype)
         vim.treesitter.start()
       end,
     })
