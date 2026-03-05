@@ -58,6 +58,11 @@ local keys = {
    { key = 'c',          mods = 'CTRL|SHIFT',  action = act.CopyTo('Clipboard') },
    { key = 'v',          mods = 'CTRL|SHIFT',  action = act.PasteFrom('Clipboard') },
 
+   -- font size --
+   { key = '-',          mods = mod.SUPER,     action = act.DecreaseFontSize },
+   { key = '=',          mods = mod.SUPER,     action = act.IncreaseFontSize },
+   { key = '0',          mods = mod.SUPER,     action = act.ResetFontSize },
+
    -- tabs --
    -- tabs: spawn+close
    { key = 't',          mods = mod.SUPER,     action = act.SpawnTab('DefaultDomain') },
@@ -71,8 +76,8 @@ local keys = {
    { key = ']',          mods = mod.SUPER_REV, action = act.MoveTabRelative(1) },
 
    -- tab: title
-   { key = '0',          mods = mod.SUPER,     action = act.EmitEvent('tabs.manual-update-tab-title') },
-   { key = '0',          mods = mod.SUPER_REV, action = act.EmitEvent('tabs.reset-tab-title') },
+   { key = '8',          mods = mod.SUPER,     action = act.EmitEvent('tabs.manual-update-tab-title') },
+   { key = '8',          mods = mod.SUPER_REV, action = act.EmitEvent('tabs.reset-tab-title') },
 
    -- tab: hide tab-bar
    { key = '9',          mods = mod.SUPER,     action = act.EmitEvent('tabs.toggle-tab-bar'), },
@@ -84,7 +89,7 @@ local keys = {
    -- window: zoom window
    {
       key = '-',
-      mods = mod.SUPER,
+      mods = mod.SUPER_REV,
       action = wezterm.action_callback(function(window, _pane)
          local dimensions = window:get_dimensions()
          if dimensions.is_full_screen then
@@ -97,7 +102,7 @@ local keys = {
    },
    {
       key = '=',
-      mods = mod.SUPER,
+      mods = mod.SUPER_REV,
       action = wezterm.action_callback(function(window, _pane)
          local dimensions = window:get_dimensions()
          if dimensions.is_full_screen then
@@ -151,7 +156,7 @@ local keys = {
       action = act.ActivateKeyTable({
          name = 'resize_font',
          one_shot = false,
-         timemout_miliseconds = 1000,
+         timeout_milliseconds = 1000,
       }),
    },
    -- resize panes
@@ -161,7 +166,7 @@ local keys = {
       action = act.ActivateKeyTable({
          name = 'resize_pane',
          one_shot = false,
-         timemout_miliseconds = 1000,
+         timeout_milliseconds = 1000,
       }),
    },
 }
@@ -197,7 +202,7 @@ local mouse_bindings = {
 function module.apply_to_config(config)
 	config.disable_default_key_bindings = true
 	-- config.disable_default_mouse_bindings = true
-	config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 500 }
+	config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 500 }
 	config.keys = keys
 	config.key_tables = key_tables
 	config.mouse_bindings = mouse_bindings
