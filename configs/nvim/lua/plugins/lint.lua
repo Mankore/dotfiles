@@ -5,9 +5,11 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     config = function()
       local lint = require("lint")
-      lint.linters_by_ft = {
+      local has_markdownlint = vim.fn.executable("markdownlint") == 1
+
+      lint.linters_by_ft = has_markdownlint and {
         markdown = { "markdownlint" },
-      }
+      } or {}
 
       -- Create autocommand which carries out the actual linting
       -- on the specified events.
