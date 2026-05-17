@@ -31,8 +31,9 @@ return {
         end
       end,
       formatters_by_ft = {
-        ["*"] = { "prettierd", "prettier" },
+        go = { "goimports", "gofumpt" },
         lua = { "stylua" },
+        ["_"] = { "prettierd", "prettier", stop_after_first = true },
       },
     },
   },
