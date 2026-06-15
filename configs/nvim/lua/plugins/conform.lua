@@ -39,9 +39,9 @@ return {
       formatters = {
         yamlfmt = {
           command = "yamlfmt",
-          args = { "-formatter", "retain_line_breaks=true" },
+          prepend_args = { "-formatter", "retain_line_breaks=true" },
         },
-      }
+      },
     },
   },
 }
