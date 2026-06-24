@@ -1,0 +1,18 @@
+font-family = "CommitMono Nerd Font Propo"
+background = 000000
+background-opacity = 0.90
+
+font-size = 16.0
+adjust-cell-height = 35%
+
+font-feature = calt=1
+font-feature = clig=1
+font-feature = liga=1
+
+cursor-style = block
+cursor-style-blink = true
+
+scrollback-limit = 20000000
+unfocused-split-opacity = 1
+
+window-subtitle = working-directory
