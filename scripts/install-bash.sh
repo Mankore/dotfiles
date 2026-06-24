@@ -84,7 +84,10 @@ link_config "wezterm" "$HOME/.config/wezterm"
 # Example 2: Neovim
 link_config "nvim" "$HOME/.config/nvim"
 
-# Example 3: Zshrc (Single file example)
+# Example 3: Ghostty
+link_config "ghostty" "$HOME/.config/ghostty"
+
+# Example 4: Zshrc (Single file example)
 # link_config "zshrc" "$HOME/.zshrc"
 
 
